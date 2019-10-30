@@ -1,3 +1,8 @@
+/* Main.java
+* UVa 10130 -- Jollo
+*/
+package uva12247;
+
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.List;
