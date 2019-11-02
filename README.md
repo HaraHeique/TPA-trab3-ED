@@ -9,3 +9,16 @@ O trabalho em questão é da disciplina de *TPA (Técnicas de Programação Avan
 
 
 Estrutura de Dados é uma implementação concreta de um tipo abstrato de dado ou um tipo de dado básico ou primitivo. Neste trabalho é proposto a resolução de um conjunto de problemas envolvendo as estruturas de dados básicas vistas na disciplina, onde todos os problemas propostos estão disponíveis no site [UVa Online Judge](https://onlinejudge.org).
+
+### Descrição geral
+A estrutura da aplicação está definida da seguinte maneira:
+
+```
+TPA-trab3-estrutura-dados-basicas
+    |_ README.md
+    |_ relatório.pdf
+    |_ codes-references.txt
+    |_ src
+        |_ uva10038
+        |_ uva12247
+```
