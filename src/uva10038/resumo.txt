@@ -1,0 +1,7 @@
+Inicialmente é feito a leitura dos dados de entrada, transformando em valores inteiros.
+Cada linha é entendido como uma sequência. Olhando os exemplos do site de debug do UVa,
+ficou entendido que o caso base é uma sequência de apenas 1 número, sendo Jolly.
+Quando a entrada possui uma sequência de mais de 1 número, é calculado a diferença
+absoluta e armazenado num ArrayList de resultados "results". Após os dados armazenados
+o ArrayList de resultados é percorrido para saber se os elementos formam uma sequência
+de 1 até (n-1). Caso a afirmativa seja verdadeira a saída é que a sequência é Jolly.
