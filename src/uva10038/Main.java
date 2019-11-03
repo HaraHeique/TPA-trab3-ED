@@ -26,27 +26,27 @@ public class Main {
              * It is understood through the "debug" site that the base case is a sequence
              * with size 1, being Jolly
              */
-            if (line.size() == 1) {
+            if(line.get(0) == 1){
                 output(true);
                 continue;
             }
-            ArrayList<Integer> results = new ArrayList<>();
+            
+            boolean[] arrayBool = new boolean[line.get(0) - 1];
             /**
-             * Calculate the difference between sequence and store in ArrayList
+             * Calculate the difference between sequence and store in arrayBoll
              */
-            for (int i = 0; i < line.size() - 1; i++) {
+            for (int i = 1; i < line.get(0); i++) {
                 int result = Math.abs(line.get(i) - line.get(i + 1));
-                results.add(result);
+                if(result > 0 && result < line.get(0)){
+                    arrayBool[result - 1] = true;
+                }
             }
             boolean isJolly = true;
             /**
              * Checks if the ArrayList "results" has a sequence from 1 to (n-1)
              */
-            for (int i = 0; i < results.size() - 1; i++) {
-            	int testJollyResult = Math.abs(results.get(i) - results.get(i + 1));
-                isJolly = isJolly && testJollyResult <= 1;
-                if (!isJolly)
-                    break;
+            for (boolean exist : arrayBool) {
+                isJolly = isJolly && exist;
             }
             // System.out.println(line);
             output(isJolly);
