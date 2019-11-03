@@ -42,8 +42,9 @@ public class Main {
             /**
              * Checks if the ArrayList "results" has a sequence from 1 to (n-1)
              */
-            for (int i = 1; i < results.size(); i++) {
-                isJolly = isJolly && (results.get(i - 1) == i);
+            for (int i = 0; i < results.size() - 1; i++) {
+            	int testJollyResult = Math.abs(results.get(i) - results.get(i + 1));
+                isJolly = isJolly && testJollyResult <= 1;
                 if (!isJolly)
                     break;
             }
@@ -60,7 +61,7 @@ public class Main {
     }
 
     /**
-     * get all line maped to int from string input
+     * get all line mapped to int from string input
      *
      * @param line
      * @return
