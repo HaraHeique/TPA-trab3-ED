@@ -1,5 +1,6 @@
 /* Main.java
 * UVa 10038 -- Jolly Jumpers
+* Autores: David Vilaça, Harã Heique e Larissa Motta
 */
 package uva10038;
 
