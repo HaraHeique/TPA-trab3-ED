@@ -1,0 +1,14 @@
+Primeiramente a entrada foi tratada como long, porque talvez o range do Integer
+não daria conta dos números grandes. A primeira solução foi desenvolvida criando
+um array 2d de todo tabuleiro, para conseguir chegar no valor de "P". Porém de alguma
+forma o programa dava TLE porque alguns tabuleiros eram grandes demais. Então resolvemos
+mudar a abordagem.
+Como no problema diz, quando sz e p são 0 é porque a última linha foi lida, então essa verificação
+foi feita no início. Logo após nós identificamos o caso base que é p igual a 1, ou seja, p está
+exatamente no centro do tabuleiro, não sendo necessário nenhuma iteração para achar as coordenadas.
+Se p não for 1, então calculamos o limite superior e inferior onde p está com um loop (linha 48),
+dando voltas em espiral internamente com o cálculo (upper + 4 * (2 * count + 1) - 4).
+Logo após calcular os limites, x e y são inicializados com a posição central do espiral somando
+com a quantidade de voltas em espiral que foi necessária para calcular os limites. E com isso
+conseguimos caminhar em espiral partindo desses limites e indo incrementando x e y até o valor
+de p ser encontrado.
