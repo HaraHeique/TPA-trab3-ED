@@ -22,3 +22,6 @@ TPA-trab3-estrutura-dados-basicas
         |_ uva10038
         |_ uva12247
 ```
+
+### Informações adicionais
+Todo o código fonte está hospedado no [GitHub](https://github.com/davidpvilaca/TPA-trab3-ED).
