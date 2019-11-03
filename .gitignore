@@ -13,3 +13,6 @@ __pycache__/
 *.output
 *.in
 *.input
+/.metadata/
+*.class
+*.metadata
