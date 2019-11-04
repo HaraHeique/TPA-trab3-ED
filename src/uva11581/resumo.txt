@@ -1,0 +1,9 @@
+O problema é sobre uma matriz 3x3 preenchida com números 0 ou 1
+e define uma função que transforma cada célula dessa matriz na
+soma com resto da divisão por 2 (módulo 2) com seu adjacente.
+Essa funão foi definida no nosso código com nome de "fn" e é aplicada
+enquanto o grid não está totalmente preenchido com números 0.
+Como o caso base é a matriz preenchida apenas com números 0, iniciamos
+o contador de saída com -1, assim se a entrada já for uma matriz zerada
+o índice retornado já será "-1" como esperado. Ao final do loop o contador
+conterá o maior índice onde k_g(f^(i) (g)) é finito.

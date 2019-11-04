@@ -1,2 +1,5 @@
 - 12247 - Jollo
 Exercício já feito na matéria de TEP
+
+- 11581 - Grid successors
+Ajuda do Lucas Gomes para entender a função definida no problema
