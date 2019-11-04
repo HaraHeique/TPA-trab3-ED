@@ -1,0 +1,14 @@
+Inicialmente é feita a leitura da entrada de dados e criado uma
+lista encadeada para ser preenchida na ordem correta da saída.
+Iteramos cada char de cada linha do texto de entrada e é verificado
+se é a tecla "home" ou "end". Se o caracter for a tecla "end" ou
+um outro caracter qualquer, o texto continua sendo inserido na lista
+normalmente ao final. Caso uma tecla "home" é encontrada, uma flag
+para indicar ser adicionado ao início é marcada e até que encontre
+uma tecla end os seguintes caracteres é adicionado a partir da posição
+0.
+Ao final apenas imprimimos a lista encadeada na ordem que ela está.
+Na primeira submissão foi retornado TLE pelo UVa, pois a lista encadeada
+era iterada e imprimida caracter por caracter separadamente. Um jeito mais
+rápido que encontramos foi transformar a lista de caracteres emuma string
+através da classe StringBuilder.
