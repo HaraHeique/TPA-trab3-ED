@@ -1,0 +1,69 @@
+3
+7
+a 3
+W 10
+A 100
+, 10
+k 7
+. 3
+I 13
+49
+ACM International Collegiate Programming Contest (abbreviated
+as ACM-ICPC or just ICPC) is an annual multi-tiered competition
+among the universities of the world. The ICPC challenges students
+to set ever higher standards of excellence for themselves
+through competition that rewards team work, problem analysis,
+and rapid software development.
+From Wikipedia.
+ACM International Collegiate Programming Contest (abbreviated
+as ACM-ICPC or just ICPC) is an annual multi-tiered competition
+among the universities of the world. The ICPC challenges students
+to set ever higher standards of excellence for themselves
+through competition that rewards team work, problem analysis,
+and rapid software development.
+From Wikipedia.
+ACM International Collegiate Programming Contest (abbreviated
+as ACM-ICPC or just ICPC) is an annual multi-tiered competition
+among the universities of the world. The ICPC challenges students
+to set ever higher standards of excellence for themselves
+through competition that rewards team work, problem analysis,
+and rapid software development.
+From Wikipedia.
+ACM International Collegiate Programming Contest (abbreviated
+as ACM-ICPC or just ICPC) is an annual multi-tiered competition
+among the universities of the world. The ICPC challenges students
+to set ever higher standards of excellence for themselves
+through competition that rewards team work, problem analysis,
+and rapid software development.
+From Wikipedia.
+ACM International Collegiate Programming Contest (abbreviated
+as ACM-ICPC or just ICPC) is an annual multi-tiered competition
+among the universities of the world. The ICPC challenges students
+to set ever higher standards of excellence for themselves
+through competition that rewards team work, problem analysis,
+and rapid software development.
+From Wikipedia.
+ACM International Collegiate Programming Contest (abbreviated
+as ACM-ICPC or just ICPC) is an annual multi-tiered competition
+among the universities of the world. The ICPC challenges students
+to set ever higher standards of excellence for themselves
+through competition that rewards team work, problem analysis,
+and rapid software development.
+From Wikipedia.
+ACM International Collegiate Programming Contest (abbreviated
+as ACM-ICPC or just ICPC) is an annual multi-tiered competition
+among the universities of the world. The ICPC challenges students
+to set ever higher standards of excellence for themselves
+through competition that rewards team work, problem analysis,
+and rapid software development.
+From Wikipedia.
+2
+q 100
+w 100
+1
+qqw wqw
+2
+p 5
+x 7
+1
+there is a rabbit in the hat.
