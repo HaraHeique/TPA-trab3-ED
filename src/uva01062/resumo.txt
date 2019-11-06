@@ -1,0 +1,8 @@
+Foi criado um loop que percorre todos caracteres de cada linha de entrada
+para achar a pilha em que ele se encaixa. Caso não ache uma pilha é criada
+uma pilha nova inicialmente com o caracter que não foi possível se encaixar
+em nenhuma pilha. Como os navios são preenchidos em ordem alfabética, para
+achar a pilha que o caracter se encaixa foi simples. Apenas buscamos a primeira
+pilha que contenha uma carga de um navio que será preenchido primeiro, ou seja,
+a primeira pilha que tiver um caracter com peso maior do que o atual poderá recebe-lo
+porque o peso menor será preenchido primeiro, logo será desempilhado primeiro.

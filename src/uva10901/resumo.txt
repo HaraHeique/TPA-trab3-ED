@@ -1,0 +1,12 @@
+Inicialmente, após as entradas de dados "n", "t" t "m" é instanciado duas filas
+de array de inteiros, estes arrays agem como um par ordenado com o tempo do carro
+e a ordem que ele foi inserido no programa (para ajudar na saída do programa).
+Essas filas são preenchida com os dados seguintes que são dos carros: qual lado
+o carro chegou e em qual tempo (em minutos começando de 0). Dessa forma conseguimos
+uma fila para cada lado e com o tempo que cada um chegou na extremidade da balsa.
+Após a fila preenchida a função "getOutput" faz a coleta das filas alternando entre
+as posições e inserindo no array de saída na posição correta de impressão o tempo.
+O tempo é calculado de acordo com o tempo corrente atual + o tempo de duração de viagem.
+Assim que a balsa muda de lado a variável que conta o tempo é acumulada com o valor de
+duração da viagem. No final com o array de saída preenchido basta percorrê-lo, pois a
+informação do par ordenado já cuidou de inserir todas as saídas na ordem correta.
