@@ -1,0 +1,13 @@
+Inicialmente um loop infinito foi definido, pois não temos a quantidade total
+de testes. Assim que encontramos N e M iguais a abortamos o loop, pois acabaram
+os casos de teste.
+Para a solução do problema foi sugerido o TreeSet pelo professor, porém tentamos
+apesar da resposta correta o UVa sempre dava o veredito TLE. Achamos então que
+poderia ser a impressão e trabalhamos com StringBuilder para realizar apenas um
+print ao final do programa, porém ainda sem sucesso. Logo após algumas tentativas
+de otimização encontramos um artigo que explicava os diferentes "Set"s do Java e
+vimos que a complexidade dos métodos "add" e "contains" é maior no TreeSet. Então
+resolvemos utilizar o HashSet e o TLE escapou por pouco (2.920s/3.000s).
+A solução em si se baseou em criar um HashSet para colocar os CDs do Jack e logo após
+fazer a interseção com os CDs do Jill, verificando CD por CD se continha no conjunto
+do Jack. O número de interseções foi contado e o resultado é a saída do caso de teste.

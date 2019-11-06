@@ -3,3 +3,6 @@ Exercício já feito na matéria de TEP
 
 - 11581 - Grid successors
 Ajuda do Lucas Gomes para entender a função definida no problema
+
+- 11849 - CD
+https://www.devmedia.com.br/diferencas-entre-treeset-hashset-e-linkedhashset-em-java/29077
