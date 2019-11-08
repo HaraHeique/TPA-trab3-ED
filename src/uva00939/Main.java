@@ -97,7 +97,7 @@ final class Person {
     }
 
     // Identifies wich gene the person has
-    public static String identifyGene(String parentGene1, String parentGene2) {
+    private static String identifyGene(String parentGene1, String parentGene2) {
         // If they are equal means that the parents have the same gene
         if (parentGene2.equals(parentGene1)) {
             return parentGene1;
