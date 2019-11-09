@@ -1,0 +1,5 @@
+Inicialmente é lido a quantidade de linhas de dados a serem processados e inseridos em uma TreeMap onde a chave é uma string, representando o nome da pessoa, e o valor um objeto "Pessoa" onde possui informação sobre o gene. 
+Ao iniciar a leitura desses dados é separado as duas substrings onde a primeira necessáriamente é um nome de uma pessoa e a segunda pode ser um nome ou referência ao gene.
+Caso a segunda string seja um gene, é verificado se existe uma chave com a primeira string na TreeMap, caso exista, é atualizado seu gene, caso não é inserida na TreeMap.
+Caso a segunda substring for um nome, indicando assim que é um Filho e a primeira string o Pai, verifica se possui as duas chaves na TreeMap, caso não possua alguma é inserida, em seguida é feito a ligação de pai ao filho.
+Ao final é feito a impressão dos resultados onde a TreeMap é percorrida e faz-se a chamada do método "getGene()" onde de forma recursiva consegue identificar se a pessoa não possui e se possui qual o tipo de gene.
