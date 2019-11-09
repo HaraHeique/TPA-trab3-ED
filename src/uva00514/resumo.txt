@@ -1,0 +1,8 @@
+A solução consiste em preencher uma pilha de acordo com a ordem dos vagões que chegam do trem
+do trilho A, obtidos na entrada de dados, e logo após removê-lo da pilha para ser reorganizado
+para o trilho B. A remoção só pode acontecer se na pilha o número do vagão for igual a ordem,
+pois são empilhados de forma crescente.
+O programa itera a ordem de chegada dos trens e a verificação para saída de que é possível ou
+não obter a ordem da entrada é feita eliminando item a item da pilha. Ao final se a pilha estiver
+vazia a ordem desejada é possível de se obter, caso contrário não.
+
