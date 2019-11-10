@@ -4,6 +4,7 @@
  */
 package uva00978;
 
+import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
@@ -54,21 +55,47 @@ public class Main {
         return army;
     }
 
-    private static void battle(PriorityQueue<Lemming> greenArmy, PriorityQueue<Lemming> blueArmy, int nBattle) {
+    private static void battle(PriorityQueue<Lemming> greenArmy, PriorityQueue<Lemming> blueArmy, int nBattles) {
+        if (nBattles <= 0) {
+            return;
+        }
+        
         // Fight until one of them or both are dead
         while (!greenArmy.isEmpty() && !blueArmy.isEmpty()) {
-            Lemming greenSoldier = greenArmy.remove();
-            Lemming blueSoldier = blueArmy.remove();
-
-            greenSoldier.fight(blueSoldier);
-
-            // Adds the green soldier with the difference power
-            if (!greenSoldier.isDead) {
-                greenArmy.add(greenSoldier);
+            int nBattlesCurrent = nBattles;
+            LinkedList<Lemming> greenBattlefieldArmy = new LinkedList();
+            LinkedList<Lemming> blueBattlefieldArmy = new LinkedList();
+            
+            while (nBattlesCurrent-- > 0) {
+                // Retrieves the next soldiers for the battle
+                Lemming greenSoldier = greenArmy.remove();
+                Lemming blueSoldier = blueArmy.remove();
+                
+                // Fight with each other and one of them or both will be in dead state
+                greenSoldier.fight(blueSoldier);
+                
+                // Adds the green soldier with the difference power
+                if (!greenSoldier.isDead) {
+                    greenBattlefieldArmy.add(greenSoldier);
+                }
+                // Adds the blue soldier with the difference power
+                if (!blueSoldier.isDead) {
+                    blueBattlefieldArmy.add(blueSoldier);
+                }
+                
+                // Check if at least one of the armies is all down while battlefield exists
+                if (greenArmy.isEmpty() || blueArmy.isEmpty()) {
+                    break;
+                }
             }
-            // Adds the blue soldier with the difference power
-            if (!blueSoldier.isDead) {
-                blueArmy.add(blueSoldier);
+            
+            // Adds the soldiers in the real army after the battlefield ends
+            if (!greenBattlefieldArmy.isEmpty()) {
+                greenArmy.addAll(greenBattlefieldArmy);
+            }
+            
+            if (!blueBattlefieldArmy.isEmpty()) {
+                blueArmy.addAll(blueBattlefieldArmy);
             }
         }
     }
