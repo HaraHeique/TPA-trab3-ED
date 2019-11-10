@@ -36,7 +36,7 @@ public class Main {
             // Show the winner of the current war case
             showWinner(greenArmy, blueArmy);
             
-            if (i <= nCases) { System.out.println(); }
+            if (i < nCases) { System.out.println(); }
         }
     }
 
