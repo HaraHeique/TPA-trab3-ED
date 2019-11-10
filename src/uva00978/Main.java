@@ -35,6 +35,8 @@ public class Main {
 
             // Show the winner of the current war case
             showWinner(greenArmy, blueArmy);
+            
+            if (i <= nCases) { System.out.println(); }
         }
     }
 
@@ -102,7 +104,7 @@ public class Main {
 
     private static void showWinner(PriorityQueue<Lemming> greenArmy, PriorityQueue<Lemming> blueArmy) {
         if (greenArmy.isEmpty() && blueArmy.isEmpty()) {
-            System.out.println("green and blue died\n");
+            System.out.println("green and blue died");
             return;
         }
 
@@ -112,7 +114,6 @@ public class Main {
             while (!greenArmy.isEmpty()) {
                 System.out.println(greenArmy.remove().toString());
             }
-            System.out.println();
             return;
         }
 
@@ -122,7 +123,6 @@ public class Main {
             while (!blueArmy.isEmpty()) {
                 System.out.println(blueArmy.remove().toString());
             }
-            System.out.println();
         }
     }
 
