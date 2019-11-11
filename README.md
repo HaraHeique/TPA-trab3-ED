@@ -19,8 +19,24 @@ TPA-trab3-estrutura-dados-basicas
     |_ relatório.pdf
     |_ codes-references.txt
     |_ src
-        |_ uva10038
         |_ uva12247
+        |_ uva10038
+        |_ uva11340
+        |_ uva10920
+        |_ uva11581
+        |_ uva10107
+        |_ uva10258
+        |_ uva10264
+        |_ uva11926
+        |_ uva11988
+        |_ uva00514
+        |_ uva01062
+        |_ uva10172
+        |_ uva10901
+        |_ uva00939
+        |_ uva10132
+        |_ uva00978
+        |_ uva11849
 ```
 
 ### Informações adicionais
