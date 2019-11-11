@@ -3,9 +3,9 @@
 * Autores: David Vilaça, Harã Heique e Larissa Motta
  */
 
-import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class Main {
 
@@ -68,8 +68,8 @@ public class Main {
         // Fight until one of them or both are dead
         while (!greenArmy.isEmpty() && !blueArmy.isEmpty()) {
             int nBattlesCurrent = nBattles;
-            LinkedList<Lemming> greenBattlefieldArmy = new LinkedList();
-            LinkedList<Lemming> blueBattlefieldArmy = new LinkedList();
+            TreeSet<Lemming> greenBattlefieldArmy = new TreeSet();
+            TreeSet<Lemming> blueBattlefieldArmy = new TreeSet();
 
             while (nBattlesCurrent-- > 0) {
                 // Retrieves the next soldiers for the battle
