@@ -2,7 +2,6 @@
 * UVa 00939 -- Genes
 * Autores: David Vilaça, Harã Heique e Larissa Motta
  */
-package uva00939;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -18,7 +17,7 @@ public class Main {
     private static final String NON_EXISTENT = "non-existent";
 
     public static void main(String[] args) {
-        //First reads the line that represents the number of lines of the dataset
+        // First reads the line that represents the number of lines of the dataset
         int n = SC.nextInt();
         ignoreLines(1);
         for (int i = 0; i < n; i++) {
@@ -49,14 +48,14 @@ public class Main {
         output();
     }
 
-// Prints out the RESULT map values sorted by name
+    // Prints out the RESULT map values sorted by name
     public static void output() {
         RESULT.keySet().forEach((key) -> {
             System.out.println(key + " " + RESULT.get(key).getGene());
         });
     }
 
-// Verify if a string is a gene
+    // Verify if a string is a gene
     public static boolean isGene(String value) {
         return value.equals(DOMINANT) || value.equals(RECESSIVE) || value.equals(NON_EXISTENT);
     }

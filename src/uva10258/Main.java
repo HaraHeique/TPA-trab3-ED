@@ -2,7 +2,6 @@
 * UVa 10258 -- Contest Scoreboard
 * Autores: David Vilaça, Harã Heique e Larissa Motta
 */
-package uva10258;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -15,82 +14,83 @@ public class Main {
     private static Contestant[] contestants;
 
     public static void main(String[] args) {
-    	SC.nextInt();
+        SC.nextInt();
         ignoreLines(2); // Avoiding the \n problem in terminal and ignoring next blank line
         contestants = new Contestant[101];
-        
+
         // While there are lines with the scores will read it
         while (SC.hasNextLine()) {
             String lineJudgeQueue = SC.nextLine();
-            
+
             if (lineJudgeQueue.isEmpty()) {
-            	output();
-            	System.out.println();
-            	contestants = new Contestant[101];
+                output();
+                System.out.println();
+                contestants = new Contestant[101];
                 continue;
             }
-            
+
             String[] tokensJudgeQueue = lineJudgeQueue.split(" ");
             int numberCon = Integer.parseInt(tokensJudgeQueue[0]);
             int problem = Integer.parseInt(tokensJudgeQueue[1]);
             int penalty = Integer.parseInt(tokensJudgeQueue[2]);
             char L = tokensJudgeQueue[3].charAt(0);
-            
+
             // Check if the Contestant exists or not
             if (contestants[numberCon] == null) {
-                contestants[numberCon] = new Contestant(numberCon);  
+                contestants[numberCon] = new Contestant(numberCon);
             }
-            
-            Contestant current = contestants[numberCon]; 
-            
+
+            Contestant current = contestants[numberCon];
+
             // If the key already exists is because was already solved
             if (current.solvedProblems.get(problem) != null) {
-            	continue;
+                continue;
             }
-            
+
             // Incorrect question so +20 penalty
             if (L == 'I') {
-            	current.incorrectPenalty[problem] += INCORRECT_SUBMISSION;
+                current.incorrectPenalty[problem] += INCORRECT_SUBMISSION;
             }
-            /* Correct answer so register the penalty on solvedProblems map with the number 
+            /*
+             * Correct answer so register the penalty on solvedProblems map with the number
              * of the problem as key
-            */
+             */
             else if (L == 'C') {
-            	current.solvedProblems.put(problem, penalty + current.incorrectPenalty[problem]);
+                current.solvedProblems.put(problem, penalty + current.incorrectPenalty[problem]);
             }
         }
-        
+
         output();
-   }
-   
-   // Ignore the number of lines in terminal
-   public static void ignoreLines(int numberOfLines) {
-       for (int i = 0; i < numberOfLines; i++) {
-           SC.nextLine();
-       }
-   }
-   
-   public static void output() {
-	   // Filter only the objects no nullables and puts inside a list
-	   ArrayList<Contestant> noNullablesContestant = new ArrayList<>();
-	   
-	   for (int i = 0; i < contestants.length; i++) {
-		   if (contestants[i] != null) {
-			   noNullablesContestant.add(contestants[i]);
-		   }
-	   }
-	   
-	   // Sorting by the rules specified in the class Contestant
-	   Collections.sort(noNullablesContestant);
-	   
-	   // Print the output result
-	   for (int i = 0; i < noNullablesContestant.size(); i++) {	   
-		   System.out.println(noNullablesContestant.get(i).toString());
-	   }
-   }
+    }
+
+    // Ignore the number of lines in terminal
+    public static void ignoreLines(int numberOfLines) {
+        for (int i = 0; i < numberOfLines; i++) {
+            SC.nextLine();
+        }
+    }
+
+    public static void output() {
+        // Filter only the objects no nullables and puts inside a list
+        ArrayList<Contestant> noNullablesContestant = new ArrayList<>();
+
+        for (int i = 0; i < contestants.length; i++) {
+            if (contestants[i] != null) {
+                noNullablesContestant.add(contestants[i]);
+            }
+        }
+
+        // Sorting by the rules specified in the class Contestant
+        Collections.sort(noNullablesContestant);
+
+        // Print the output result
+        for (int i = 0; i < noNullablesContestant.size(); i++) {
+            System.out.println(noNullablesContestant.get(i).toString());
+        }
+    }
 }
 
-// Contestants model representation of the contest 
+// Contestants model representation of the contest
 final class Contestant implements Comparable<Contestant> {
     public int num;
     public HashMap<Integer, Integer> solvedProblems; // key:problem & value:penalty
@@ -103,7 +103,7 @@ final class Contestant implements Comparable<Contestant> {
     }
 
     public int calculteTotalPenalty() {
-    	int result = 0;
+        int result = 0;
         return this.solvedProblems.values().stream().map((value) -> value).reduce(result, Integer::sum);
     }
 
@@ -118,21 +118,19 @@ final class Contestant implements Comparable<Contestant> {
 
     @Override
     public int compareTo(Contestant contestant) {
-    	if (contestant == null ||
-    		this.qntProblemsSolved() > contestant.qntProblemsSolved()) {
-        	return -1;
+        if (contestant == null || this.qntProblemsSolved() > contestant.qntProblemsSolved()) {
+            return -1;
         }
-    	
-    	if (this.qntProblemsSolved() == contestant.qntProblemsSolved() &&
-    		this.calculteTotalPenalty() < contestant.calculteTotalPenalty()) {
-    		return -1;
-    	}
-    	
-    	if (this.calculteTotalPenalty() == contestant.calculteTotalPenalty() &&
-    		this.num < contestant.num) {
-    		return -1;
-    	}
-    	
-    	return 1;
+
+        if (this.qntProblemsSolved() == contestant.qntProblemsSolved()
+                && this.calculteTotalPenalty() < contestant.calculteTotalPenalty()) {
+            return -1;
+        }
+
+        if (this.calculteTotalPenalty() == contestant.calculteTotalPenalty() && this.num < contestant.num) {
+            return -1;
+        }
+
+        return 1;
     }
 }

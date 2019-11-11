@@ -2,7 +2,6 @@
 * UVa 10038 -- Jolly Jumpers
 * Autores: David Vilaça, Harã Heique e Larissa Motta
 */
-package uva10038;
 
 import java.util.Scanner;
 import java.util.Arrays;
@@ -26,18 +25,18 @@ public class Main {
              * It is understood through the "debug" site that the base case is a sequence
              * with size 1, being Jolly
              */
-            if(line.get(0) == 1){
+            if (line.get(0) == 1) {
                 output(true);
                 continue;
             }
-            
+
             boolean[] arrayBool = new boolean[line.get(0) - 1];
             /**
              * Calculate the difference between sequence and store in arrayBoll
              */
             for (int i = 1; i < line.get(0); i++) {
                 int result = Math.abs(line.get(i) - line.get(i + 1));
-                if(result > 0 && result < line.get(0)){
+                if (result > 0 && result < line.get(0)) {
                     arrayBool[result - 1] = true;
                 }
             }

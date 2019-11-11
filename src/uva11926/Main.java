@@ -2,7 +2,6 @@
 * UVa 11926 -- Multitasking
 * Autores: David Vilaça, Harã Heique e Larissa Motta
  */
-package uva11926;
 
 import java.util.Scanner;
 
@@ -25,9 +24,10 @@ public class Main {
             int qntOneTimeTask = Integer.parseInt(numberOfTasksTokens[0]);
             int qntRepeatingTask = Integer.parseInt(numberOfTasksTokens[1]);
 
-            /* Represents the minutes of the problem. Each position represents 
-            * a minute. If the position equals 0 then can be allocated. Otherwise
-            cannot, wich means there is a conflict
+            /*
+             * Represents the minutes of the problem. Each position represents a minute. If
+             * the position equals 0 then can be allocated. Otherwise cannot, wich means
+             * there is a conflict
              */
             int[] minutes = new int[TOTAL_MINUTES + 10];
 
@@ -55,9 +55,10 @@ public class Main {
         for (int i = 1; i <= qntTasks; i++) {
             Task currentTask = getTask(SC.nextLine());
 
-            /* Iterates over time array and puts 1 to each position minute 
-            * from start to end task time. If position already has 1 value
-            * means there is a conflict. Otherwise there isn't.
+            /*
+             * Iterates over time array and puts 1 to each position minute from start to end
+             * task time. If position already has 1 value means there is a conflict.
+             * Otherwise there isn't.
              */
             for (int min = currentTask.start; min < currentTask.end; min++) {
                 if (minutesTasksTime[min] == 1) {
@@ -78,9 +79,10 @@ public class Main {
         for (int i = 1; i <= qntTasks; i++) {
             Task currentTask = getTask(SC.nextLine());
 
-            /* Iterates over time array and puts 1 to each position minute 
-            * from start to end task time. If position already has 1 value
-            * means there is a conflict. Otherwise there isn't.
+            /*
+             * Iterates over time array and puts 1 to each position minute from start to end
+             * task time. If position already has 1 value means there is a conflict.
+             * Otherwise there isn't.
              */
             while (true) {
                 for (int min = currentTask.start; min < currentTask.end; min++) {
@@ -89,14 +91,14 @@ public class Main {
                         ignoreLines(qntTasks - i);
                         return true;
                     }
-                    
+
                     minutesTasksTime[min] = 1;
                 }
 
                 if (currentTask.end == TOTAL_MINUTES) {
                     break;
                 }
-                
+
                 currentTask.setInterval(TOTAL_MINUTES);
             }
         }

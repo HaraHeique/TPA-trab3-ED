@@ -3,8 +3,6 @@
 * Autores: David Vilaça, Harã Heique e Larissa Motta
 */
 
-package uva10901;
-
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;

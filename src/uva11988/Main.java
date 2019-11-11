@@ -2,7 +2,6 @@
 * UVa 11988 -- Broken Keyboard
 * Autores: David Vilaça, Harã Heique e Larissa Motta
 */
-package uva11988;
 
 import java.util.Scanner;
 import java.util.LinkedList;

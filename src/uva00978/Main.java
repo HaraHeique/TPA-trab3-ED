@@ -2,7 +2,6 @@
 * UVa 00978 -- Lemmings Battle!
 * Autores: David Vilaça, Harã Heique e Larissa Motta
  */
-package uva00978;
 
 import java.util.LinkedList;
 import java.util.PriorityQueue;
@@ -28,15 +27,18 @@ public class Main {
             // Creating a queue to each Lemming Blue Army soldier
             PriorityQueue<Lemming> blueArmy = createLemmingArmy(nLemmingBlue);
 
-            /* Perfomances a battle until the end, wich means just one or any 
-            * army has elements
+            /*
+             * Perfomances a battle until the end, wich means just one or any army has
+             * elements
              */
             battle(greenArmy, blueArmy, nBattlefield);
 
             // Show the winner of the current war case
             showWinner(greenArmy, blueArmy);
-            
-            if (i < nCases) { System.out.println(); }
+
+            if (i < nCases) {
+                System.out.println();
+            }
         }
     }
 
@@ -48,8 +50,9 @@ public class Main {
             int currentPower = SC.nextInt();
             ignoreLines(1);
 
-            /* Creates a Leeming and add into a queue based in his priority, 
-            * wich is the greater power
+            /*
+             * Creates a Leeming and add into a queue based in his priority, wich is the
+             * greater power
              */
             army.add(new Lemming(currentPower));
         }
@@ -61,21 +64,21 @@ public class Main {
         if (nBattles <= 0) {
             return;
         }
-        
+
         // Fight until one of them or both are dead
         while (!greenArmy.isEmpty() && !blueArmy.isEmpty()) {
             int nBattlesCurrent = nBattles;
             LinkedList<Lemming> greenBattlefieldArmy = new LinkedList();
             LinkedList<Lemming> blueBattlefieldArmy = new LinkedList();
-            
+
             while (nBattlesCurrent-- > 0) {
                 // Retrieves the next soldiers for the battle
                 Lemming greenSoldier = greenArmy.remove();
                 Lemming blueSoldier = blueArmy.remove();
-                
+
                 // Fight with each other and one of them or both will be in dead state
                 greenSoldier.fight(blueSoldier);
-                
+
                 // Adds the green soldier with the difference power
                 if (!greenSoldier.isDead) {
                     greenBattlefieldArmy.add(greenSoldier);
@@ -84,18 +87,18 @@ public class Main {
                 if (!blueSoldier.isDead) {
                     blueBattlefieldArmy.add(blueSoldier);
                 }
-                
+
                 // Check if at least one of the armies is all down while battlefield exists
                 if (greenArmy.isEmpty() || blueArmy.isEmpty()) {
                     break;
                 }
             }
-            
+
             // Adds the soldiers in the real army after the battlefield ends
             if (!greenBattlefieldArmy.isEmpty()) {
                 greenArmy.addAll(greenBattlefieldArmy);
             }
-            
+
             if (!blueBattlefieldArmy.isEmpty()) {
                 blueArmy.addAll(blueBattlefieldArmy);
             }

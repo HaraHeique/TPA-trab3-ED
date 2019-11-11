@@ -2,7 +2,6 @@
 * UVa 00514 -- Rails
 * Autores: David Vilaça, Harã Heique e Larissa Motta
 */
-package uva00514;
 
 import java.util.Scanner;
 import java.util.Stack;

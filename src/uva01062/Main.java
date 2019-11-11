@@ -2,7 +2,6 @@
 * UVa 01062 -- Containers
 * Autores: David Vilaça, Harã Heique e Larissa Motta
 */
-package uva01062;
 
 import java.util.Scanner;
 import java.util.Stack;

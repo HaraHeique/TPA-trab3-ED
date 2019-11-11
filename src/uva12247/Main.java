@@ -2,7 +2,6 @@
 * UVa 10130 -- Jollo
 * Autores: David Vilaça, Harã Heique e Larissa Motta
 */
-package uva12247;
 
 import java.util.Scanner;
 import java.util.Arrays;

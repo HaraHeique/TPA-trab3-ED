@@ -2,7 +2,6 @@
 * UVa 10132 -- File Fragmentation
 * Autores: David Vilaça, Harã Heique e Larissa Motta
  */
-package uva10132;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,35 +15,35 @@ public class Main {
     private static final BufferedReader SC = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
-        
-        //First reads the line that represents the number of cases of the dataset
+
+        // First reads the line that represents the number of cases of the dataset
         int n = Integer.parseInt(SC.readLine());
         ignoreLines(1);
 
         for (int i = 0; i < n; i++) {
-            //Add the fragments in memory list structure
+            // Add the fragments in memory list structure
             ArrayList<String> listFragments = readBlock();
 
-            //Get the length of final file
+            // Get the length of final file
             int lengthOfFinalFile = getLengthOfFinalFile(listFragments);
 
-            //Get possibles solutions
+            // Get possibles solutions
             SortedMap<String, Integer> possibleResults = getPossiblesSolutions(listFragments, lengthOfFinalFile);
 
-            //Print solution 
+            // Print solution
 
-            for(String key : possibleResults.keySet()) {
+            for (String key : possibleResults.keySet()) {
                 if (possibleResults.get(key) >= (listFragments.size() / 2)) {
                     System.out.println(key);
                     break;
                 }
             }
-            //Print a blank line
-            if (i != n-1) {
+            // Print a blank line
+            if (i != n - 1) {
                 System.out.println();
             }
         }
-        
+
         SC.close();
         System.exit(0);
     }
@@ -56,12 +55,12 @@ public class Main {
         }
     }
 
-    //Returns the fragments in memory list structure
+    // Returns the fragments in memory list structure
     public static ArrayList<String> readBlock() throws IOException {
         ArrayList<String> listFragments = new ArrayList();
         while (true) {
             String fragment = SC.readLine();
-            if(fragment == null || fragment.isEmpty()){
+            if (fragment == null || fragment.isEmpty()) {
                 break;
             }
             listFragments.add(fragment);
@@ -69,7 +68,7 @@ public class Main {
         return listFragments;
     }
 
-    //Returns the length of final file based on the min and max fragment
+    // Returns the length of final file based on the min and max fragment
     public static int getLengthOfFinalFile(ArrayList<String> listFragments) {
         int min = listFragments.get(0).length();
         int max = min;
@@ -85,14 +84,14 @@ public class Main {
         return min + max;
     }
 
-    //Returns a TreeMap with the possibles results
+    // Returns a TreeMap with the possibles results
     public static SortedMap<String, Integer> getPossiblesSolutions(ArrayList<String> listFragments, int lengthOfFile) {
         SortedMap<String, Integer> possibleResults = new TreeMap();
         for (int j = 0; j < listFragments.size(); j++) {
             for (int k = 0; k < listFragments.size(); k++) {
                 if (k != j) {
                     String possibility = listFragments.get(j) + listFragments.get(k);
-                    //Verify if the possibility has the length of final file
+                    // Verify if the possibility has the length of final file
                     if (possibility.length() == lengthOfFile) {
                         Integer count = possibleResults.get(possibility);
                         if (count != null) {

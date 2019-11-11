@@ -2,7 +2,6 @@
 * UVa 11581 -- Grid successors
 * Autores: David Vilaça, Harã Heique e Larissa Motta
 */
-package uva11581;
 
 import java.util.Scanner;
 
