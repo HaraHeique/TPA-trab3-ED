@@ -2,7 +2,6 @@
 * UVa 10172 -- The Lonesome Cargo Distribuitor
 * Autores: David Vilaça, Harã Heique e Larissa Motta
 */
-package uva10172;
 
 import java.util.HashMap;
 import java.util.LinkedList;
