@@ -1,0 +1,13 @@
+Inicialmente começamos o desenvolvimento com o pensamento de criar um array
+para representar a plataforma B, porém para facilitar o uso de índices de
+1 <= x <= n, optamos por usar um HashMap que não deve ser tão pior assim
+neste caso e facilitaria um pouco para escrever a solução de acordo com o
+enunciado.
+Após  a entrada de dados inicial que repesenta a  quantidade total de casos
+de teste, obtemos os números n, s e q. Número de estações no anel, capacidade
+da transportadora e número máximo de cargas da fila da plataforma b,
+respectivamente. Então, instanciamos uma fila para cada estação dentro do map
+e a preenchemos com seus destinos. Com essa estrutura, caminhamos de forma circular
+na plataforma b e contamos o tempo de acordo com os destinos que são alcançados.
+Para ganhar um pouco mais de tempo e evitar TLE também é utilizado a classe StringBuilder
+para criar uma string de saída e realizar apenas uma operação de print ao final do programa.

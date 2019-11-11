@@ -1,5 +1,5 @@
 /* Main.java
-* UVa 10172 -- The Lonesome Cargo
+* UVa 10172 -- The Lonesome Cargo Distribuitor
 * Autores: David Vilaça, Harã Heique e Larissa Motta
 */
 package uva10172;
@@ -16,6 +16,12 @@ class Main {
     private static int n;
 
     public static void main(String[] args) {
+        /**
+         * to start index with 1 I'm using HashMap
+         */
+        HashMap<Integer, Queue<Integer>> b = new HashMap<Integer, Queue<Integer>>();
+        Queue<Integer> currentQueue;
+
         scanner = new Scanner(System.in);
 
         // buffer output to print one time
@@ -31,15 +37,14 @@ class Main {
             int q = scanner.nextInt(); // maximum number of cargoes the queue in platform "b" can accommodate
 
             /**
-             * to start index with 1 I'm using HashMap
+             * Create the queues in map and put input
              */
-            HashMap<Integer, Queue<Integer>> b = new HashMap<Integer, Queue<Integer>>();
-
             for (int i = 1; i <= n; i++) {
                 int qi = scanner.nextInt();
-                b.put(i, new LinkedList<>());
+                currentQueue = new LinkedList<>();
+                b.put(i, currentQueue);
                 for (int j = 0; j < qi; j++) {
-                    b.get(i).add(scanner.nextInt());
+                    currentQueue.add(scanner.nextInt());
                 }
             }
 
@@ -49,7 +54,6 @@ class Main {
             int cargo;
             int i = 1;
             while (!isEmpty(b) || !carrier.empty()) {
-                i = i % n + 1;
                 minutes += 2;
                 platform = b.get(i);
 
@@ -71,6 +75,9 @@ class Main {
                     carrier.push(platform.poll());
                     minutes++;
                 }
+
+                // circular motion
+                i = i % n + 1;
             }
             output.append(Integer.toString(minutes == 0 ? minutes : minutes - 2));
             output.append("\n");
@@ -80,6 +87,12 @@ class Main {
 
     }
 
+    /**
+     * return true if platform b is empty
+     *
+     * @param b
+     * @return
+     */
     public static boolean isEmpty(HashMap<Integer, Queue<Integer>> b) {
         for (int i = 1; i <= n; i++) {
             if (b.get(i).size() > 0) {
